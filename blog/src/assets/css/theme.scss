@@ -1,0 +1,16 @@
+@import "./variable.scss";
+
+$themes: (
+  light: (
+    background-color: $light_bgc,
+    color: $light_color,
+    background-color-hover: $light_hover_bgc,
+    shadow-color: $light_shadow,
+  ),
+  dark: (
+    background-color: $dark_bgc,
+    color: $dark_color,
+    background-color-hover: $dark_hover_bgc,
+    shadow-color: $dark_shadow,
+  ),
+);

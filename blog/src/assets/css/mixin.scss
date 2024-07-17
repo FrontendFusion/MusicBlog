@@ -1,0 +1,30 @@
+@import "./theme.scss";
+
+$curTheme: ();
+
+
+@mixin theme() {
+  @each $theme, $ojb in $themes {
+    [data-theme="#{$theme}"] & {
+      @each $key, $val in $ojb {
+        $curTheme: map-merge(
+          $curTheme,
+          (
+            $key: $val,
+          )
+        ) !global;
+      };
+      @content;
+    }
+  }
+};
+
+@function get($key){
+  @return map-get($curTheme, $key);
+}
+
+@mixin display_flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

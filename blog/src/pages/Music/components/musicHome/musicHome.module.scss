@@ -1,0 +1,34 @@
+.view_box {
+  width: 50%;
+  height: 100%;
+  border-radius: 20px 0 0 20px;
+  box-shadow: 0 0 5px #ccc;
+  z-index: 10;
+  // background-color: #fff;
+  @include theme() {
+    background-color: get("background-color");
+  }
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    text-align: left;
+    line-height: 1em;
+  }
+  .carousel {
+    width: 100%;
+    height: 140px;
+    margin: 5px 0;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  section {
+    display: flex;
+    justify-content: space-between;
+    span {
+      font-size: 14px;
+      color: rgb(144, 157, 225);
+    }
+  }
+}

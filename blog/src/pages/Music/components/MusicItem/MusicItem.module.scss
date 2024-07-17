@@ -1,0 +1,40 @@
+.row {
+  height: 40px;
+  // margin-top: 10px;
+  & > div {
+    text-align: left;
+    color: #999;
+    font-size: 14px;
+  }
+
+  .poster {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  p {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;;
+    text-align: left;
+    font-size: 12px;
+    line-height: 12px;
+    color: #333;
+    @include theme{
+      color: get("color")
+    }
+  }
+  .author {
+    color: #999 !important;
+  }
+  .time {
+    font-size: 14px;
+  }
+  .icon{
+    margin-top: 4px;
+    font-size: 20px;
+  }
+}

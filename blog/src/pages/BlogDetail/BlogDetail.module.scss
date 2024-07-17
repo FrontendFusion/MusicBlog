@@ -1,0 +1,36 @@
+.detail{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #F2F3F5;
+  padding: 10px;
+  .main{
+    width: 1100px;
+    margin: 0 auto;
+    .content{
+      padding: 10px 20px;
+      background-color: #fff;
+      header{
+        // margin-bottom: 10px;
+        .info{
+          color: #4F46E5;
+          font-weight: 700;
+        }
+      }
+    }
+    .recommendation{
+      position: sticky;
+      top: 10px;
+      height: calc(100vh - 20px);
+      padding: 20px 10px;
+      background-color: #fff;
+      .aside{
+        .listItem{
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

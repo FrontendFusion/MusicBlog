@@ -1,0 +1,203 @@
+.box {
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  .personInfo {
+    width: 10%;
+    @include display_flex;
+    align-items: center;
+    .left {
+      position: relative;
+      &:hover {
+        .info {
+          visibility: visible;
+          opacity: 1;
+        }
+        .photo {
+          transform: translateY(40%) scale(1.1);
+        }
+        img {
+          transform: scale(1.2);
+        }
+      }
+
+      .photo {
+        transition: all 0.2s ease-in-out 0.1s;
+        width: 50px;
+        height: 50px;
+
+        border-radius: 50%;
+        overflow: hidden;
+
+        position: relative;
+        z-index: 201;
+        cursor: pointer;
+
+        img {
+          transition: all 0.6s;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .info {
+        transition: all 0.2s ease-in-out 0.1s;
+        width: 180px;
+        height: 220px;
+        padding: 40px 15px 0px 15px;
+        position: absolute;
+        top: 100%;
+        left: -135%;
+        z-index: 200;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        border-radius: 10px;
+        @include theme() {
+          background-color: get("background-color");
+          color: get("color");
+          box-shadow: 2px 2px 5px get("shadow-color"),
+            -2px -2px 5px get("shadow-color");
+        }
+        p {
+          font-size: 14px;
+          @include display_flex;
+          & > span:last-child {
+            flex: 1;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            text-align: left;
+          }
+          & > span:first-child {
+            width: 55px;
+            text-align: right;
+            color: #999;
+          }
+        }
+        .btn {
+          width: 75px;
+          background-color: rgb(79, 70, 229);
+          margin-top: 10px;
+          height: 30px;
+          @include display_flex;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+  .musicPanel {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    .musicInfo {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+      .marquee {
+        width: 60%;
+      }
+      & > div {
+        width: 30%;
+        column-gap: 20px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  .menu {
+    width: 45%;
+    @include display_flex;
+    justify-content: flex-end;
+    column-gap: 20px;
+    .menuList {
+      padding: 10px 0;
+      @include display_flex;
+      column-gap: 20px;
+      position: relative;
+
+      .menuItem {
+        padding: 5px 15px;
+        cursor: pointer;
+        @include theme() {
+          color: get("color");
+        }
+        &:hover {
+          @include theme() {
+            background-color: get("background-color-hover");
+          }
+        }
+      }
+      .menuSlider {
+        transition: all 0.3s;
+        position: absolute;
+        bottom: 0;
+        left: var(--left, 0);
+        width: var(--width, 64px);
+        height: 2px;
+        background-color: #165dff;
+      }
+    }
+
+    .switch {
+      $width-of-switch: 3.5em;
+      $height-of-switch: 2em;
+      $size-of-icon: 1.4em;
+      $slider-offset: 0.3em;
+
+      display: block;
+      position: relative;
+      width: $width-of-switch;
+      height: $height-of-switch;
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #f4f4f5;
+        transition: 0.4s;
+        border-radius: 30px;
+        &::before {
+          position: absolute;
+          content: "";
+          height: $size-of-icon;
+          width: $size-of-icon;
+          border-radius: 20px;
+          left: $slider-offset;
+          top: 50%;
+          transform: translateY(-50%);
+          background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+          transition: 0.4s;
+        }
+      }
+
+      input:checked + .slider {
+        background-color: #303136;
+      }
+
+      input:checked + .slider:before {
+        left: calc(100% - $size-of-icon + $slider-offset);
+        background: #303136;
+        box-shadow: inset -3px -2px 5px -2px #8983f7,
+          inset -10px -4px 0 0 #a3dafb;
+      }
+    }
+  }
+  .icon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+}

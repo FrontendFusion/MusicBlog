@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "picture_walls",
+  "info": {
+    "singularName": "picture-wall",
+    "pluralName": "picture-walls",
+    "displayName": "pictureWall",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "des": {
+      "type": "text"
+    },
+    "pic": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

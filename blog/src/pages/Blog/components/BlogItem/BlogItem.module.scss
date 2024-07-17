@@ -1,0 +1,54 @@
+.blogItem {
+  width: 600px;
+  margin: 0px 0px 30px 80px;
+  font-size: 16px;
+  padding: 10px 150px 10px 20px;
+  position: relative;
+  &:hover {
+    @include theme() {
+      background-color: get("background-color-hover");
+    }
+    .closeIcon,
+    .editBtn {
+      opacity: 1;
+    }
+  }
+
+  h2 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    @include theme() {
+      color: get("color");
+    }
+  }
+  .type {
+    span {
+      color: rgb(79 70 229);
+      margin-right: 15px;
+      font-weight: 700;
+    }
+  }
+  .content {
+    margin-top: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    color: rgb(134, 144, 156);
+  }
+  .closeIcon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: small;
+    cursor: pointer;
+    opacity: 0;
+  }
+  .editBtn {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    opacity: 0;
+  }
+}

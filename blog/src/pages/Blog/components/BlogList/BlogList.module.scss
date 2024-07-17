@@ -1,0 +1,150 @@
+.blogList {
+  text-align: left;
+  flex-direction: column;
+  @include display_flex;
+  .pageHeader {
+    position: sticky;
+    top: 0;
+    @include theme() {
+      background-color: get("background-color");
+    }
+    z-index: 10;
+    width: 78%;
+    :global(.arco-page-header-title) {
+      @include theme() {
+        color: get("color");
+      }
+    }
+    .searchBox {
+      @include display_flex;
+      column-gap: 30px;
+      .icon {
+        font-size: 22px;
+        cursor: pointer;
+        color: rgb(134, 144, 156);
+      }
+    }
+    .sendArticle {
+      margin-left: 50px;
+      background-color: rgb(79, 70, 229);
+      &:hover {
+        background-color: rgb(128, 121, 254);
+      }
+    }
+  }
+  :global(.arco-timeline-item-label) {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+  }
+}
+
+.pagination {
+  padding: 0 100px;
+  display: flex;
+  justify-content: flex-end;
+  :global(.arco-pagination-item a){
+    color:rgb( 134,144,156 );
+  }
+  :global(.arco-pagination-total-text) {
+    @include theme() {
+      color: get("color");
+    }
+  }
+  :global(.arco-pagination-item-simple-pager span){
+    @include theme() {
+      color: get("color");
+    }
+  }
+  :global(.arco-pagination-item-simple-pager .arco-input){
+    @include theme() {
+      color: get("color");
+      background-color: get("background-color-hover");
+    }
+  }
+}
+
+.searchModal {
+  @include theme {
+    background-color: get("background-color");
+  }
+  .box {
+    .header {
+      @include display_flex;
+      justify-content: space-between;
+      .search {
+        :global(.arco-input-inner-wrapper) {
+          border-color: transparent;
+          @include theme() {
+            caret-color: get("color");
+            background-color: transparent;
+          }
+          &:focus-within {
+            @include theme() {
+              background-color: get("background-color-hover");
+            }
+          }
+          :global(.arco-input) {
+            font-size: 16px;
+          }
+        }
+        .searchIcon {
+          font-size: 24px;
+          color: rgb(22, 93, 255);
+        }
+      }
+      .quit {
+        color: rgb(134, 144, 156);
+        .text {
+          padding: 0 5px;
+          @include theme() {
+            background-color: get("background-color");
+          }
+          border: 1px solid #c9cdd4;
+          box-sizing: border-box;
+          box-shadow: 0 1px 0 #c9cdd4;
+          border-radius: 3px;
+          margin-left: 10px;
+        }
+      }
+    }
+    .searchContent {
+      margin-top: 10px;
+      max-height: 300px;
+      overflow: auto;
+      ul {
+        list-style: none;
+        li {
+          display: flex;
+          align-items: center;
+          padding: 5px 10px;
+          margin-bottom: 5px;
+          cursor: pointer;
+          &:hover {
+            @include theme() {
+              background-color: get("background-color-hover");
+            }
+          }
+          span {
+            color: rgb(134, 144, 156);
+            font-size: 18px;
+            margin-right: 10px;
+            font-family: initial;
+          }
+          p {
+            color: rgb(134, 144, 156);
+            font-weight: 700;
+            margin-left: 10px;
+          }
+          .icon {
+            height: 30px;
+            color: rgb(134, 144, 156);
+            font-size: 18px;
+            margin: 0 2px;
+          }
+        }
+      }
+    }
+  }
+}

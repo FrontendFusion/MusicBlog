@@ -1,0 +1,21 @@
+.box {
+  height: 70vh;
+  width: 100%;
+  position: relative;
+
+  :global(.bytemd) {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    * {
+      font-family: initial;
+    }
+  }
+  :global(.bytemd-fullscreen) {
+    position: fixed !important;
+    height: 100vh !important;
+    z-index: 200;
+  }
+}

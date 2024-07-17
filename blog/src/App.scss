@@ -1,0 +1,47 @@
+.arco-layout {
+  width: 100%;
+  height: 100vh;
+  @include theme() {
+    background-color: get("background-color");
+    color: get("color");
+  }
+  .box{
+    flex: 1;
+    overflow-y: scroll;
+    &::-webkit-scrollbar-track{
+      @include theme() {
+       background-color: get("background-color"); 
+      }
+    }
+  }
+}
+
+.arco-layout-header,
+.arco-layout-footer,
+.arco-layout-content {
+  padding: 0 20px;
+  text-align: center;
+  font-stretch: condensed;
+  font-size: 16px;
+  .arco-menu-light {
+    @include theme() {
+      background-color: get("background-color");
+    }
+  }
+}
+
+.arco-layout-header,
+.arco-layout-footer {
+  height: 80px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.arco-layout-content {
+  // padding: 10px 0;
+}
+
+.arco-layout-header{
+  box-shadow: 5px 0 5px #ccc;
+  z-index: 20;
+}

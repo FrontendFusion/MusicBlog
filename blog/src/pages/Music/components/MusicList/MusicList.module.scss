@@ -1,0 +1,13 @@
+.viewBox{
+    margin-top: 5px;
+    flex: 1;
+    overflow-y: scroll;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    &>div{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+}
